@@ -214,6 +214,7 @@ pt-BR:
     attributes:
       user:
         email: "Email"
+        user_name: "Usuário"
         password: "Senha"
         password_confirmation: "Confirmação de senha"
     errors:
