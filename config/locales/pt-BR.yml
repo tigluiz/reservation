@@ -207,5 +207,14 @@ pt-BR:
     errors:
       <<: *errors
   activerecord:
+    models:
+      user:
+        one: "Usuário"
+        other: "Usuários"
+    attributes:
+      user:
+        email: "Email"
+        password: "Senha"
+        password_confirmation: "Confirmação de senha"
     errors:
       <<: *errors
