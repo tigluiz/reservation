@@ -1,5 +1,7 @@
 pt-BR:
   devise:
+    buttons:
+      sign_in: "Logar"
     confirmations:
       confirmed: "Sua conta foi confirmada com sucesso. Você está logado."
       send_instructions: "Dentro de minutos você receberá um e-mail com instruções para confirmar a sua conta."
