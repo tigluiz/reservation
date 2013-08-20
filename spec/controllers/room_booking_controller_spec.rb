@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ReservationController do
+describe RoomBookingController do
   context "Correct sign_in" do
     login_user
     describe "GET 'index'" do

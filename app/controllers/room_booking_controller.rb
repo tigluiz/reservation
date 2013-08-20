@@ -1,4 +1,4 @@
-class ReservationController < ApplicationController
+class RoomBookingController < ApplicationController
   before_filter :authenticate_user!
   def index
   end
