@@ -51,8 +51,8 @@
             <ul class="nav">
               <li><%= link_to "Reservar", reservations_path  %></li>
               <% if user_signed_in? %>
-                <li>
-                  <%= link_to('Sair', destroy_user_session_path, :method => :delete) %>
+                <li class="sign_out">
+                  <span><%= current_user.user_name  %> |</span> <%= link_to('Sair', destroy_user_session_path, :method => :delete) %>
                 </li>
               <% else %>
                 <li>

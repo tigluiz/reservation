@@ -11,3 +11,13 @@
  *= require_self
  *= require_tree .
  */
+
+.sign_out{
+  margin-left: 500px;
+  width: 300px;
+  span{
+    float: left;
+    margin-right: 8px;
+    margin-top: 9px;
+  }
+}
