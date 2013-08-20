@@ -50,6 +50,15 @@
           <div class="container-fluid nav-collapse">
             <ul class="nav">
               <li><%= link_to "Reservar", "/path1"  %></li>
+              <% if user_signed_in? %>
+                <li>
+                  <%= link_to('Sair', destroy_user_session_path, :method => :delete) %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to('Entrar', new_user_session_path)  %>
+                </li>
+              <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -58,14 +67,6 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Reservar", "/path1"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
         <div class="span9">
           <%= bootstrap_flash %>
           <%= yield %>
