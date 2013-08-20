@@ -49,7 +49,7 @@
           <a class="brand" href="#">Reservation</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Reservar", "/path1"  %></li>
+              <li><%= link_to "Reservar", reservations_path  %></li>
               <% if user_signed_in? %>
                 <li>
                   <%= link_to('Sair', destroy_user_session_path, :method => :delete) %>
