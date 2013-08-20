@@ -1,2 +1,17 @@
-%h1 Reservation#index
-%p Find me in app/views/reservation/index.html.haml
+%h1 Horários para reserva
+
+%table.table
+  %tr
+    %th
+      Horário
+    - @days.each do |day|
+      %th
+        =I18n.t("date.day_names")[day]
+  - @hours.each do |hour|
+    %tr
+      %td
+        = hour
+      - @days.each do |day|
+        %td
+          = link_to "Disponível", room_booking_create_path, data: {hour: hour, day: day}, class: "send_data"
+
