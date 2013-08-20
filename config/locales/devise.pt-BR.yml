@@ -2,6 +2,10 @@ pt-BR:
   devise:
     buttons:
       sign_in: "Logar"
+      sign_up: "Criar usuário"
+      recover_password: "Esqueceu sua senha"
+      receive_instructions: "Não recebeu sua confirmação de senha?"
+      receive_unlok_instructions: "Não recebeu informações de desbloqueio?"
     confirmations:
       confirmed: "Sua conta foi confirmada com sucesso. Você está logado."
       send_instructions: "Dentro de minutos você receberá um e-mail com instruções para confirmar a sua conta."
