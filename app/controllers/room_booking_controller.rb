@@ -5,5 +5,7 @@ class RoomBookingController < ApplicationController
     @days = ReservationHelper::DAYS
   end
 
+  def create
+
   end
 end
