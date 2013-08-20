@@ -1,7 +1,12 @@
 require 'spec_helper'
 
 describe User do
-  it "raise error with create without user_name" do
-    pending
+  context "On missing attibutes" do
+    before do
+      @user = FactoryGirl.build(:user, user_name: nil)
+    end
+    it "be invalid without user_name" do
+      expect(@user.valid?).to be_false
+    end
   end
 end
