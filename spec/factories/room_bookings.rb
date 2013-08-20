@@ -5,5 +5,9 @@ FactoryGirl.define do
     user nil
     reserved_at "2013-08-20 00:02:56"
     active false
+
+    trait :room_with_user do
+      user
+    end
   end
 end
