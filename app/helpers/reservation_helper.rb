@@ -24,8 +24,12 @@ module ReservationHelper
   end
 
   def verify_reservations(day,hour)
-    rev = @reservations.select{|te| te.reserved_at.day == (@beginning_of_week + day.day).day && te.reserved_at.hour == hour}
+    rev = pick_up_reservation(day,hour)
     rev.empty? || (!rev.empty? && rev.first.active == false)
+  end
+
+  def pick_up_reservation(day,hour)
+    @reservations.select{|te| te.reserved_at.day == (@beginning_of_week + day.day).day && te.reserved_at.hour == hour}
   end
 
 end
