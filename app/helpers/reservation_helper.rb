@@ -10,6 +10,13 @@ module ReservationHelper
     end
   end
 
+  def reservation_of(day,hour)
+    rev = pick_up_reservation(day,hour)
+    result = !rev.empty? && rev.first.try(:user) == current_user && rev.first.try(:active) == true ? "Reservado por #{current_user.user_name}" : ""
+    content_tag(:span, result)
+  end
+
+
   def verify_reservations(day,hour)
     rev = @reservations.select{|te| te.reserved_at.day == (@beginning_of_week + day.day).day && te.reserved_at.hour == hour}
     rev.empty? || (!rev.empty? && rev.first.active == false)
