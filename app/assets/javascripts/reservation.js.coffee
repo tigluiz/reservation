@@ -13,7 +13,7 @@ $ ->
         success: (data, textStatus, jqXHR) ->
           link_selected.html("Cancelar")
           link_selected.attr("href", "/room_booking/destroy")
-          link_selected.removeClass('send_create_data').addClass('send_destroy_data')
+          link_selected.parent().find('span').html('Reservado por ' + jqXHR.responseJSON.user)
       )
     else
       $.ajax(
@@ -23,7 +23,7 @@ $ ->
         success: (data, textStatus, jqXHR) ->
           link_selected.html("Disponível")
           link_selected.attr("href", "/room_booking/create")
-          link_selected.removeClass('send_destroy_data').addClass('send_create_data')
+          link_selected.parent().find('span').html('')
       )
     event.preventDefault()
 
