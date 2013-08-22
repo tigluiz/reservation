@@ -12,6 +12,9 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'haml-rails'
 gem 'devise'
 
+group :production do
+  gem 'rails_12factor'
+end
 group :doc do
   gem 'sdoc', require: false
 end
