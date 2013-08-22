@@ -16,6 +16,9 @@ module ReservationHelper
     content_tag(:span, result)
   end
 
+  def print_hour(hour)
+    "#{hour}:00"
+  end
 
   private
 

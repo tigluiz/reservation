@@ -10,7 +10,7 @@
   - @hours.each do |hour|
     %tr
       %td
-        = hour
+        = print_hour(hour)
       - @days.each do |day|
         %td
           = reservation_of(day,hour)
