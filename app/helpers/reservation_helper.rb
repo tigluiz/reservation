@@ -17,6 +17,12 @@ module ReservationHelper
   end
 
 
+  private
+
+  def check_manager_avaliable(day,hour)
+    pick_up_reservation(day,hour).first.try(:user) == current_user
+  end
+
   def verify_reservations(day,hour)
     rev = @reservations.select{|te| te.reserved_at.day == (@beginning_of_week + day.day).day && te.reserved_at.hour == hour}
     rev.empty? || (!rev.empty? && rev.first.active == false)
