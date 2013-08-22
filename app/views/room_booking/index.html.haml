@@ -6,7 +6,7 @@
       Horário
     - @days.each do |day|
       %th
-        =I18n.t("date.day_names")[day]
+        =I18n.t("date.day_names")[day + 1]
   - @hours.each do |hour|
     %tr
       %td
