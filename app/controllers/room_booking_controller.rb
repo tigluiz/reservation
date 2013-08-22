@@ -9,6 +9,10 @@ class RoomBookingController < ApplicationController
   end
 
   def create
+    render json: BookManager::Schedule.new("create",params,current_user).parse
+  end
 
+  def destroy
+    render json: BookManager::Schedule.new("destroy",params,current_user).parse
   end
 end
