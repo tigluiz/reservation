@@ -13,4 +13,6 @@
         = hour
       - @days.each do |day|
         %td
+          = reservation_of(day,hour)
+          %br
           = link_to_room_booking(day,hour)
