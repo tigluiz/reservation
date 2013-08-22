@@ -6,7 +6,7 @@ module ReservationHelper
     if verify_reservations(day,hour)
       link_to "Disponível", room_booking_create_path, data: {hour: hour, day: day}, class: "send_data"
     else
-      link_to "Cancelar", room_booking_destroy_path, data: {hour: hour, day: day}, class: "send_data"
+      link_to_if check_manager_avaliable(day,hour) ,"Cancelar", room_booking_destroy_path, data: {hour: hour, day: day}, class: "send_data"
     end
   end
 
