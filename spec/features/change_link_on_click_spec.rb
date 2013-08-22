@@ -33,4 +33,13 @@ feature 'User see link text change on reservation' do
     expect(page).to have_content('Cancelar')
     expect(page).to have_content("Reservado por Almeida")
   end
+  scenario "User click to remove reservation" do
+    @javascript
+    sign_in
+    visit reservations_path
+    first(:link, 'Disponível').click
+    expect(page).to have_content('Cancelar')
+    first(:link, 'Cancelar').click
+    expect(page).to_not have_content('Cancelar')
+  end
 end
